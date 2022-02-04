@@ -1,0 +1,12 @@
+{{#if loggedIn}}
+<section class="profile">
+  <img src="/images/{{profile.filename}}" alt="{{profile.name}}">
+  <div class="painting-details">
+    <h3>{{profile.usernam}}</h3>
+    <p>By: {{profile.username}}</p>
+    <p>Exhibition open until: Further Notice!</p>
+  </div>
+</section>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}

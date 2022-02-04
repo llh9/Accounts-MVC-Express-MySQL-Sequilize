@@ -79,7 +79,7 @@ router.get('/painting/:id', async (req, res) => {
   }
 });
 // GET one profile
-router.get('/profile/:username', async (req, res) => {
+router.get('/profile/:id', async (req, res) => {
   try {
     const dbProfileData = await Profile.findByPk(req.params.id);
 
