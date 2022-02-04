@@ -23,6 +23,22 @@ Gallery.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    profiles: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    services: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    games: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    videos: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     sequelize,
