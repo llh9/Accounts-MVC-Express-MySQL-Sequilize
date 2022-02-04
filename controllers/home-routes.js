@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Gallery, Painting, Profile } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
@@ -10,6 +10,10 @@ router.get('/', async (req, res) => {
           model: Painting,
           attributes: ['filename', 'description'],
         },
+        {
+          model: Profile, 
+          attributes: ['username'],
+        }
       ],
     });
 
@@ -42,6 +46,14 @@ router.get('/gallery/:id', async (req, res) => {
             'description',
           ],
         },
+        {
+          model: Profile,
+          attributes: [
+            'id',
+            'username',
+            'filename',
+          ],
+        },
       ],
     });
 
@@ -53,6 +65,7 @@ router.get('/gallery/:id', async (req, res) => {
   }
 });
 
+
 // GET one painting
 router.get('/painting/:id', async (req, res) => {
   try {
@@ -60,6 +73,18 @@ router.get('/painting/:id', async (req, res) => {
 
     const painting = dbPaintingData.get({ plain: true });
     res.render('painting', { painting, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+// GET one profile
+router.get('/profile/:username', async (req, res) => {
+  try {
+    const dbProfileData = await Profile.findByPk(req.params.id);
+
+    const profile = dbProfileData.get({ plain: true });
+    res.render('profile', { profile, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
