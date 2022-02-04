@@ -7,7 +7,7 @@ const gallerydata = [
     ending_date: 'June 21, 2022 17:00:00',
     users: 1,
     services: 1,
-    games: 0,
+    gamez: 0,
     videos: 0
   },
   {
@@ -16,7 +16,7 @@ const gallerydata = [
     ending_date: 'September 22, 2022 22:00:00',
     users: 1,
     services: 1,
-    games: 0,
+    gamez: 0,
     videos: 0
   },
   {
@@ -25,7 +25,7 @@ const gallerydata = [
     ending_date: 'December 21, 2022 20:30:00',
     users: 1,
     services: 1,
-    games: 0,
+    gamez: 0,
     videos: 0
   },
   {
@@ -34,7 +34,7 @@ const gallerydata = [
     ending_date: 'March 19, 2022 19:00:00',
     users: 1,
     services: 1,
-    games: 0,
+    gamez: 0,
     videos: 0
   },
 ];

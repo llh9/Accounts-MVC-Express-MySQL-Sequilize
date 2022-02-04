@@ -31,7 +31,7 @@ Gallery.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    games: {
+    gamez: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

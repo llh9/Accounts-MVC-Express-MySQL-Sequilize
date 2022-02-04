@@ -8,8 +8,8 @@
   {{#if gallery.services}}
   <h4>Services: {{gallery.services}}</h4>
   {{/if}}
-  {{#if gallery.games}}
-  <h4>Games: {{gallery.games}}</h4>
+  {{#if gallery.gamez}}
+  <h4>Games: {{gallery.gamez}}</h4>
   {{/if}}
   {{#if gallery.videos}}
   <h4>Videos: {{gallery.videos}}</h4>
@@ -21,6 +21,9 @@
     {{/each}}
     {{#each gallery.profiles as |profile|}}
     {{> profile-details}}
+    {{/each}}
+    {{#each gallery.games as |games|}}
+    {{> game-details}}
     {{/each}}
   </section>
 </section>

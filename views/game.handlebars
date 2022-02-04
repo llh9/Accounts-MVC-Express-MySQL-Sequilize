@@ -1,0 +1,12 @@
+{{#if loggedIn}}
+<section class="game">
+  <img src="/images/{{game.filename}}" alt="{{game.title}}">
+  <div class="painting-details">
+    <h3>{{game.title}}</h3>
+    <p>By: Landon Hinkle</p>
+    <p>Exhibition open until: Further Notice!</p>
+  </div>
+</section>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}

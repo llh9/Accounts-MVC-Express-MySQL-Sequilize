@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Gallery, Painting, Profile } = require('../models');
+const { Gallery, Painting, Profile, Game } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
     const dbGalleryData = await Gallery.findAll({
+      //include models that are associated 
       include: [
         {
           model: Painting,
@@ -13,6 +14,10 @@ router.get('/', async (req, res) => {
         {
           model: Profile, 
           attributes: ['username'],
+        },
+        {
+          model: Game, 
+          attributes: ['title', 'profiles'],
         }
       ],
     });
@@ -54,6 +59,15 @@ router.get('/gallery/:id', async (req, res) => {
             'filename',
           ],
         },
+        {
+          model: Game,
+          attributes: [
+            'id',
+            'title',
+            'filename',
+            'profiles',
+          ],
+        },
       ],
     });
 
@@ -64,7 +78,6 @@ router.get('/gallery/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 // GET one painting
 router.get('/painting/:id', async (req, res) => {
@@ -78,6 +91,7 @@ router.get('/painting/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // GET one profile
 router.get('/profile/:id', async (req, res) => {
   try {
@@ -85,6 +99,19 @@ router.get('/profile/:id', async (req, res) => {
 
     const profile = dbProfileData.get({ plain: true });
     res.render('profile', { profile, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one Game
+router.get('/game/:id', async (req, res) => {
+  try {
+    const dbGameData = await Game.findByPk(req.params.id);
+
+    const game = dbGameData.get({ plain: true });
+    res.render('game', { game, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
