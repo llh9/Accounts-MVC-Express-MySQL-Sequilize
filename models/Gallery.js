@@ -27,7 +27,7 @@ Gallery.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    services: {
+    servicez: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -35,7 +35,7 @@ Gallery.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    videos: {
+    videoz: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

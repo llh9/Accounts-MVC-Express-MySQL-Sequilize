@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Painting, Profile, Game } = require('../models');
+const { Gallery, Painting, Profile, Game, Service, Video } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
         },
         {
           model: Profile, 
-          attributes: ['username'],
+          attributes: ['username', 'filename'],
         },
         {
           model: Game, 
-          attributes: ['title', 'profiles'],
+          attributes: ['title', 'profiles', 'filename'],
         }
       ],
     });
@@ -60,7 +60,25 @@ router.get('/gallery/:id', async (req, res) => {
           ],
         },
         {
+          model: Service,
+          attributes: [
+            'id',
+            'service_name',
+            'filename',
+            'profiles',
+          ],
+        },
+        {
           model: Game,
+          attributes: [
+            'id',
+            'title',
+            'filename',
+            'profiles',
+          ],
+        },
+        {
+          model: Video,
           attributes: [
             'id',
             'title',
@@ -105,6 +123,19 @@ router.get('/profile/:id', async (req, res) => {
   }
 });
 
+// GET one Servic
+router.get('/service/:id', async (req, res) => {
+  try {
+    const dbServiceData = await Service.findByPk(req.params.id);
+
+    const service = dbServiceData.get({ plain: true });
+    res.render('service', { service, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // GET one Game
 router.get('/game/:id', async (req, res) => {
   try {
@@ -112,6 +143,19 @@ router.get('/game/:id', async (req, res) => {
 
     const game = dbGameData.get({ plain: true });
     res.render('game', { game, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one Video
+router.get('/video/:id', async (req, res) => {
+  try {
+    const dbVideoData = await Video.findByPk(req.params.id);
+
+    const video = dbVideoData.get({ plain: true });
+    res.render('video', { video, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

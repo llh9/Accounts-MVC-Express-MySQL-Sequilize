@@ -1,43 +1,36 @@
 const { Profile } = require('../models');
 
 const profiledata = [
-  
   {
     username: 'Landon Hinkle',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',
-
   },
   {
-    username: 'lkjsdasd Hinkle',
+    username: 'Meccaded Hinkle',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',
-
   },
   {
-    username: 'dasljfa  Hinkle',
+    username: 'Katie  Hinkle',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',
-
   },
   {
-    username: 'asdoijav Hinkle',
+    username: 'Xavier Hinkle',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',
-
   },
   {
-    username: 'aadoivjad Hinkle',
+    username: 'Celia Hinkle',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',
-
   },
-  
 ];
 
 const seedProfiles = () => Profile.bulkCreate(profiledata);

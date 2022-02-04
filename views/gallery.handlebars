@@ -5,25 +5,31 @@
   {{#if gallery.users}}
   <h4>Profiles: {{gallery.users}}</h4>
   {{/if}} 
-  {{#if gallery.services}}
-  <h4>Services: {{gallery.services}}</h4>
+  {{#if gallery.servicez}}
+  <h4>Services: {{gallery.servicez}}</h4>
   {{/if}}
   {{#if gallery.gamez}}
   <h4>Games: {{gallery.gamez}}</h4>
   {{/if}}
-  {{#if gallery.videos}}
-  <h4>Videos: {{gallery.videos}}</h4>
+  {{#if gallery.videoz}}
+  <h4>Videos: {{gallery.videoz}}</h4>
   {{/if}}
   {{#if loggedIn}}
   <section class="flex-row justify-center">
-    {{#each gallery.paintings as |painting|}}
-    {{> painting-details}}
-    {{/each}}
     {{#each gallery.profiles as |profile|}}
     {{> profile-details}}
     {{/each}}
+    {{#each gallery.services as |service|}}
+    {{> service-details}}
+    {{/each}}
     {{#each gallery.games as |games|}}
     {{> game-details}}
+    {{/each}}
+    {{#each gallery.videos as |video|}}
+    {{> video-details}}
+    {{/each}}
+    {{#each gallery.paintings as |painting|}}
+    {{> painting-details}}
     {{/each}}
   </section>
 </section>
