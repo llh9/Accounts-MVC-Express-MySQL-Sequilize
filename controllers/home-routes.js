@@ -123,7 +123,7 @@ router.get('/profile/:id', async (req, res) => {
   }
 });
 
-// GET one Servic
+// GET one service
 router.get('/service/:id', async (req, res) => {
   try {
     const dbServiceData = await Service.findByPk(req.params.id);
@@ -136,7 +136,7 @@ router.get('/service/:id', async (req, res) => {
   }
 });
 
-// GET one Game
+// GET one game
 router.get('/game/:id', async (req, res) => {
   try {
     const dbGameData = await Game.findByPk(req.params.id);
@@ -149,7 +149,7 @@ router.get('/game/:id', async (req, res) => {
   }
 });
 
-// GET one Video
+// GET one video
 router.get('/video/:id', async (req, res) => {
   try {
     const dbVideoData = await Video.findByPk(req.params.id);

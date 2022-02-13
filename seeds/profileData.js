@@ -2,7 +2,7 @@ const { Profile } = require('../models');
 
 const profiledata = [
   {
-    username: 'Landon Hinkle',
+    username: 'Landon Hinkle Jr',
     gallery_id: 1,
     profiles: 1,
     filename: '07-autumn-mountains.jpg',

@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Orbitron:wght@900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">  <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   
 </head>
 
 <body>
-  <header>
+  <div class="backgroundCover">
+  {{!-- <header>
     <h1>Welcome</h1>
-  </header>
-  <nav>
+  </header> --}}
+  <nav Style="font-size:30px;">
     <a href="/">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
@@ -26,9 +26,9 @@
     {{/if}}
   </nav>
   <main>
-    <aside>
-      <h2>Enjoy!</h2>
-    </aside>
+    {{!-- <aside>
+      <h2></h2>
+    </aside> --}}
     <div class="gallery">
       {{{body}}}
     </div>
@@ -36,6 +36,7 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  </div>
 </body>
 
 </html>

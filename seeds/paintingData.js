@@ -6,7 +6,7 @@ const paintingdata = [
     artist: 'LedyX',
     exhibition_date: 'March 30, 2018',
     gallery_id: 1,
-    filename: '01-blossoming-apricot.jpg',
+    filename: '01-blossoming-apricot.png',
     description:
       'Branches with pink apricot blossoms against a blue background.',
   },
@@ -15,7 +15,7 @@ const paintingdata = [
     artist: 'WStudio',
     exhibition_date: 'May 05, 2017',
     gallery_id: 1,
-    filename: '02-cosmos-flowers.jpg',
+    filename: '01-blossoming-apricot.png',
     description: 'Pink cosmos flowers against a blue sky.',
   },
   {
@@ -23,7 +23,7 @@ const paintingdata = [
     artist: 'S_Photo',
     exhibition_date: 'June 10, 2019',
     gallery_id: 2,
-    filename: '03-sand-sea-summer.jpg',
+    filename: '02-cosmos-flowers.jpg',
     description: 'Sandy beach with the blue sea and sky in the background.',
   },
   {
@@ -31,7 +31,7 @@ const paintingdata = [
     artist: 'icemanphotos',
     exhibition_date: 'July 4, 2020',
     gallery_id: 2,
-    filename: '04-beach-chairs.jpg',
+    filename: '02-cosmos-flowers.jpg',
     description: 'Two beach chairs under a beach umbrella on the beach.',
   },
   {
@@ -39,7 +39,7 @@ const paintingdata = [
     artist: 'VRstudio',
     exhibition_date: 'August 14, 2016',
     gallery_id: 2,
-    filename: '05-beach-sunrise.jpg',
+    filename: '02-cosmos-flowers.jpg',
     description: 'Sun setting in the horizon with waves lapping the shore.',
   },
   {
